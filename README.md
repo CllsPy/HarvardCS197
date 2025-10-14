@@ -11,12 +11,12 @@ This course counts with 21 Lecture Notes
 
 | No | Lecture Name                                                   | Folder | Date Completed | Notes |
 |----|----------------------------------------------------------------|--------|----------------|-------|
-| 1  | You Complete My Sandwiches / Exciting Advances with AI Language Models |        |                |       |
-| 2  | The Zen of Python / Software Engineering Fundamentals           |        |                |       |
-| 3  | Shoulders of Giants / Reading AI Research Papers               |        |                |       |
-| 4  | In-Tune with Jazz Hands / Fine-tuning a Language Model using Hugging Face |        |                |       |
-| 5  | Lightning McTorch / Fine-tuning a Vision Transformer using Lightning |        |                |       |
-| 6  | Moonwalking with PyTorch / Solidifying PyTorch Fundamentals    |        |                |       |
+| 1  | You Complete My Sandwiches / Exciting Advances with AI Language Models | August 3th, 2025       |                |       |
+| 2  | The Zen of Python / Software Engineering Fundamentals           | August 4th, 2025       |                |       |
+| 3  | Shoulders of Giants / Reading AI Research Papers               | August 5th, 2025       |                |       |
+| 4  | In-Tune with Jazz Hands / Fine-tuning a Language Model using Hugging Face |  August 6th, 2025      |                |       |
+| 5  | Lightning McTorch / Fine-tuning a Vision Transformer using Lightning | August 7th, 2025       |                |       |
+| 6  | Moonwalking with PyTorch / Solidifying PyTorch Fundamentals    | Octuber 13th, 2025       |                |       |
 | 7  | Moonwalking with PyTorch (cont’d)                             |        |                |       |
 | 8  | Experiment Organization Sparks Joy / Organizing Model Training with W&B and Hydra |        |                |       |
 | 9  | Experiment Organization Sparks Joy (cont’d)                   |        |                |       |
