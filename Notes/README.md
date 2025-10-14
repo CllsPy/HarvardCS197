@@ -62,8 +62,6 @@ e = w[3, 3, 0]
 | `stack()` | Cria uma **nova dimensão** | Aumenta dimensionalidade |
 | `cat()`   | Usa **dimensão existente** | Mantém dimensões, concatena |
 
----
-
 ## Aula 2: Ambiente de Desenvolvimento
 
 ### Atalhos Essenciais do VSCode
