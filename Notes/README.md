@@ -108,7 +108,6 @@ conda activate venv/
 - `pip freeze` para gerenciar pacotes
 - Ferramentas: `uv`, `conda`
 
----
 
 ## Aula 4: Fine-tuning de Modelos de Linguagem
 
@@ -263,7 +262,6 @@ print(tokenizer.decode(outputs[0]))
 - Fine-tuning com DeepSeek no SQuAD-PT-V1
 - Biblioteca `unsloth` para otimização
 
----
 
 ## Aula 5: Vision Transformers (ViT)
 
@@ -558,7 +556,6 @@ Compara a previsão com o valor real, calcula o erro (loss) e ajusta os pesos pa
 4. Backward pass (calcular gradientes)
 5. Atualizar pesos com optimizer
 6. Repetir
-
 
 
 ## Recursos Adicionais
