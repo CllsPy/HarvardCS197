@@ -3,7 +3,7 @@
 **Criado em:** 30 de julho de 2025  
 **Tags:** AI, Courses, Machine Learning, AI Research
 
----
+
 
 ## Metodologia de Estudo
 
@@ -11,7 +11,7 @@
 
 **Princípio Principal:** Building is the most effective way of learning when it comes to AI/ML engineering.
 
----
+
 
 ## Aula 1: Tensores com PyTorch
 
@@ -482,7 +482,6 @@ model, results = train_model(
 )
 ```
 
----
 
 ## Aulas 6-7: PyTorch Fundamentals
 
@@ -542,7 +541,6 @@ n[0] = 2
 print(t)  # Mudanças refletem em ambos
 ```
 
----
 
 ## Treinamento de Redes Neurais: Forward e Backward Pass
 
@@ -563,7 +561,7 @@ Compara a previsão com o valor real, calcula o erro (loss) e ajusta os pesos pa
 5. Atualizar pesos com optimizer
 6. Repetir
 
----
+
 
 ## Recursos Adicionais
 
@@ -574,7 +572,7 @@ Compara a previsão com o valor real, calcula o erro (loss) e ajusta os pesos pa
 - [Developing Intuition for Math](https://betterexplained.com/articles/developing-your-intuition-for-math/)
 - [Machine Learning Course](https://betterexplained.com/articles/adept-machine-learning-course/)
 
----
+
 
 ## Tópicos para Aprofundamento Futuro
 
