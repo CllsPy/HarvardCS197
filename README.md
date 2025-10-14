@@ -9,7 +9,7 @@ Instructed by Professor [Pranav Rajpurkar.](https://pranavrajpurkar.com/)
 ### Classes
 This course counts with 21 Lecture Notes
 
-| No | Lecture Name                                                   | Folder | Date Completed | Notes |
+| No | Lecture Name                                                   | Date Completed | Folder | Notes |
 |----|----------------------------------------------------------------|--------|----------------|-------|
 | 1  | You Complete My Sandwiches / Exciting Advances with AI Language Models | August 3th, 2025       |                |       |
 | 2  | The Zen of Python / Software Engineering Fundamentals           | August 4th, 2025       |                |       |
