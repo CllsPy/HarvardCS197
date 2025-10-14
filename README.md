@@ -9,10 +9,27 @@ Instructed by Professor [Pranav Rajpurkar.](https://pranavrajpurkar.com/)
 ### Classes
 This course counts with 21 Lecture Notes
 
-| No | Course | Folder | Data Completed | Notes |
-|----|---------|---------|----------------|--------|
-| 1  |         |         |                |        |
-| 2  |         |         |                |        |
-| 3  |         |         |                |        |
-| 4  |         |         |                |        |
-| 5  |         |         |                |        |
+| No | Lecture Name                                                   | Folder | Date Completed | Notes |
+|----|----------------------------------------------------------------|--------|----------------|-------|
+| 1  | You Complete My Sandwiches / Exciting Advances with AI Language Models |        |                |       |
+| 2  | The Zen of Python / Software Engineering Fundamentals           |        |                |       |
+| 3  | Shoulders of Giants / Reading AI Research Papers               |        |                |       |
+| 4  | In-Tune with Jazz Hands / Fine-tuning a Language Model using Hugging Face |        |                |       |
+| 5  | Lightning McTorch / Fine-tuning a Vision Transformer using Lightning |        |                |       |
+| 6  | Moonwalking with PyTorch / Solidifying PyTorch Fundamentals    |        |                |       |
+| 7  | Moonwalking with PyTorch (cont’d)                             |        |                |       |
+| 8  | Experiment Organization Sparks Joy / Organizing Model Training with W&B and Hydra |        |                |       |
+| 9  | Experiment Organization Sparks Joy (cont’d)                   |        |                |       |
+| 10 | I Dreamed a Dream / A Framework for Generating Research Ideas   |        |                |       |
+| 11 | I Dreamed a Dream (cont’d)                                     |        |                |       |
+| 12 | Today Was a Fairytale / Structuring a Research Paper            |        |                |       |
+| 13 | Today Was a Fairytale (cont’d)                                 |        |                |       |
+| 14 | Deep Learning on Cloud Nine / AWS EC2 for Deep Learning         |        |                |       |
+| 15 | Deep Learning on Cloud Nine (cont’d)                           |        |                |       |
+| 16 | Make your dreams come tuned / Fine-Tuning Your Stable Diffusion Model |        |                |       |
+| 17 | Make your dreams come tuned (cont’d)                           |        |                |       |
+| 18 | Research Productivity Power-Ups / Tips to Manage Your Time and Efforts |        |                |       |
+| 19 | The AI Ninja / Making Progress and Impact in AI Research        |        |                |       |
+| 20 | Bejeweled / Tips for Creating High-Quality Slides                |        |                |       |
+| 21 | Model Showdown / Statistical Testing to Compare Model Performances |        |                |       |
+
