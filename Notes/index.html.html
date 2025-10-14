@@ -1,0 +1,1222 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>cs197</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="241e5d7f-bd86-80bf-ac4f-e13bdd4cfc53" class="page mono"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://www.notion.so/icons/asterisk_gray.svg"/></div><h1 class="page-title">cs197</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Date de création</th><td><time>@30 juillet 2025 22:24</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>Étiquettes</th><td><span class="selected-value select-value-color-default">Ai</span><span class="selected-value select-value-color-gray">Courses</span><span class="selected-value select-value-color-gray">Machine Learning</span><span class="selected-value select-value-color-default">ai-research</span></td></tr></tbody></table></header><div class="page-body"><p id="241e5d7f-bd86-8084-aee7-cd9322889228" class="">Suporte:</p><figure id="241e5d7f-bd86-8020-96d2-e1ba214c0f94"><div class="source">https://docs.google.com/document/d/1z5ELxpTw_U01jUB6-D6ILqHRPg6SSiLE7VFQryH3LPU/edit?tab=t.0</div></figure><p id="241e5d7f-bd86-80f4-a845-ca1aae97ea6f" class=""><a href="https://betterexplained.com/articles/adept-machine-learning-course/">https://betterexplained.com/articles/adept-machine-learning-course/</a></p><p id="241e5d7f-bd86-805f-be4f-de6c4accf61b" class=""><a href="https://betterexplained.com/articles/developing-your-intuition-for-math/">https://betterexplained.com/articles/developing-your-intuition-for-math/</a></p><p id="241e5d7f-bd86-8008-a1ab-fda6b902ab68" class="">
+</p><figure id="241e5d7f-bd86-8053-b012-c598af574037" class="image"><a href="image.png"><img style="width:382.984375px" src="image.png"/></a></figure><p id="241e5d7f-bd86-8021-8daa-c8b0754fe6b5" class="">
+</p><p id="241e5d7f-bd86-801a-97d5-cf09a9cbab60" class=""><strong>A simple study plan: Go through the material. Did it click? Write down what helped, otherwise look for a better explanation.</strong></p><p id="264e5d7f-bd86-80db-b609-d039b6b86c1c" class="">
+</p><h2 id="241e5d7f-bd86-8061-854f-e2e4ee6a4dee" class="">Questions</h2><ul id="264e5d7f-bd86-80a7-8bc2-eae824ad93b4" class="toggle"><li><details open=""><summary><mark class="highlight-teal">Create an tensor from the nested list [[5,3], [0,9]]</mark></summary><p id="264e5d7f-bd86-8019-9669-f84d0e2af208" class=""><strong>data = [[5, 3], [0, 9]]</strong></p><p id="264e5d7f-bd86-80af-87c9-f3f6e220a2d0" class=""><strong>x_data = torch.tensor(data)</strong></p></details></li></ul><ul id="264e5d7f-bd86-8064-90b0-d2d4bf84d3e4" class="toggle"><li><details open=""><summary><mark class="highlight-purple">Create a tensor ‘t’ of shape (5, 4) with random numbers from a uniform distribution on the interval [0, 1) </mark></summary><p id="264e5d7f-bd86-802f-a59e-cc9297d8246c" class=""><strong>t = torch.rand((5,4))</strong></p></details></li></ul><ul id="264e5d7f-bd86-8007-bb8a-c4fbd7f88ca3" class="toggle"><li><details open=""><summary><mark class="highlight-teal">Find out which device the tensor ‘t’ is on and what its datatype is.</mark></summary><p id="264e5d7f-bd86-80e6-9e3a-e1cdb28bff05" class=""><strong>print(t.device) </strong><em><strong># cpu</strong></em></p><p id="264e5d7f-bd86-8009-89fa-e2b85f225db8" class=""><strong>print(t.dtype) </strong><em><strong># float32</strong></em></p></details></li></ul><ul id="264e5d7f-bd86-80c2-aa05-e76e34a2f23e" class="toggle"><li><details open=""><summary><mark class="highlight-red">Create two random tensors of shape (4,4) and (4,4) called ‘u’ and ‘v’ respectively. Join them to make a tensor of shape (8, 4).</mark></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-80db-93b8-c5de7486d5a6" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">u = torch.randn((4,4))
+v = torch.randn((4,4))
+print(torch.concat((u,v), dim=0).shape) # torch.Size([8, 4])</code></pre></details></li></ul><ul id="264e5d7f-bd86-80a9-970b-cbfef8fddf9d" class="toggle"><li><details open=""><summary><mark class="highlight-red">Join u and v to create a tensor of shape (2, 4, 4).</mark></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-80c5-a2eb-d13d99fff513" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">w = torch.stack((u,v), dim=2)
+print(w.shape) # torch.Size([4, 4, 2])</code></pre></details></li></ul><ul id="264e5d7f-bd86-80cd-8a53-f6ea915b2120" class="toggle"><li><details open=""><summary><mark class="highlight-red">Join u and v to make a tensor, called w of shape (4, 4, 2).</mark></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-809f-90df-c3d94aa61400" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">w = torch.stack((u,v), dim=2)
+print(w.shape) # torch.Size([4, 4, 2])</code></pre></details></li></ul><ul id="264e5d7f-bd86-80ac-9226-ec8b00de83d4" class="toggle"><li><details open=""><summary><mark class="highlight-red">Index w at 3, 3, 0. Call that element ‘e’.</mark></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-8025-af96-c933944538ed" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">e = w[3,3,0]</code></pre></details></li></ul><ul id="264e5d7f-bd86-80e4-bcc3-ef6523c34609" class="toggle"><li><details open=""><summary><mark class="highlight-red">Which of u or v would you find w in? Verify.</mark></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-806c-b992-c1e9e5e022e8" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">w[3,3,0] == u[3,3] # True</code></pre></details></li></ul><ul id="264e5d7f-bd86-808c-9d89-c78a92633975" class="toggle"><li><details open=""><summary>Create a tensor ‘a’ of ones with shape (4, 3). Perform element wise multiplication of ‘a’ with itself.</summary></details></li></ul><ul id="264e5d7f-bd86-80ef-9e78-cea09476fbcc" class="toggle"><li><details open=""><summary>Add an extra dimension to ‘a’ (a new 0th dimension)</summary></details></li></ul><ul id="264e5d7f-bd86-8080-8417-ced97c1de846" class="toggle"><li><details open=""><summary>Perform a matrix multiplication of a with a transposed.</summary></details></li></ul><ul id="264e5d7f-bd86-805a-8e67-ecd118e655d9" class="toggle"><li><details open=""><summary>What would a.mul(a) result in?</summary></details></li></ul><ul id="264e5d7f-bd86-80df-94c8-c3b9a6ed954e" class="toggle"><li><details open=""><summary>What would a.matmul(a.T) result in?</summary></details></li></ul><ul id="264e5d7f-bd86-80d6-b494-d603fa9eb0f1" class="toggle"><li><details open=""><summary>What would a.mul(a.T) result in?</summary></details></li></ul><ul id="264e5d7f-bd86-80c0-97f2-e82d4bd42ecf" class="toggle"><li><details open=""><summary>Guess what the following will print. Verify</summary></details></li></ul><ul id="264e5d7f-bd86-80c4-9878-c27b1330ff49" class="toggle"><li><details open=""><summary>What will the following print?</summary></details></li></ul><ul id="264e5d7f-bd86-8098-ac8e-cd483973d8e4" class="toggle"><li><details open=""><summary>What’s the difference between <code>.stack()</code> and <code>.cat()</code></summary><p id="264e5d7f-bd86-80f2-a048-e6c82cc37ae8" class=""><strong>stack </strong>join by creating a new dimension</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-8025-a9bb-c8d438a71185" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+
+u = torch.rand((4, 4))
+v = torch.rand((4, 4))
+w = torch.rand(4, 4)
+
+print(u.shape, v.shape, w.shape) # torch.Size([3, 4, 4])</code></pre><p id="264e5d7f-bd86-80e5-9d7d-f9fa1cdbed17" class="">
+</p><p id="264e5d7f-bd86-807d-b121-d50962eb025c" class="">cat uses the existing one</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="264e5d7f-bd86-80dc-b9b7-f932cb5b3fe1" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">cat_tensors = torch.cat([u, v, w])
+cat_tensors.shape # torch.Size([12, 4])</code></pre></details></li></ul><p id="264e5d7f-bd86-8001-b90d-d62d7dae4553" class="">
+</p><h2 id="241e5d7f-bd86-802d-969b-fe0eb469fe1b" class="">Aula 2</h2><p id="241e5d7f-bd86-8080-97ba-ca4d23387275" class="">
+</p><p id="241e5d7f-bd86-8078-a061-f564f62b5a6e" class="">Vocabulário:</p><ul id="241e5d7f-bd86-80b7-b620-d7212b65f59b" class="bulleted-list"><li style="list-style-type:disc">debugging: corrgir código</li></ul><ul id="241e5d7f-bd86-8094-92b8-eaddce05e995" class="bulleted-list"><li style="list-style-type:disc">linting: formatar código</li></ul><ul id="241e5d7f-bd86-80bd-930e-c08d8e033a2a" class="bulleted-list"><li style="list-style-type:disc">versioning: manter cópia segura do código</li></ul><p id="241e5d7f-bd86-809c-af2f-fa2606cb4f81" class="">
+</p><p id="241e5d7f-bd86-8068-b538-c947df3402d5" class="">Aha: no vscode podemos usar atalhos para acessar arquivos, tutoriais. a tecla que permite acesso a caixa onde procuramos os arquivo é o <code>ctrl+shift+p</code>.</p><p id="241e5d7f-bd86-80dc-a6e7-ea1d6f73c4fe" class="">
+</p><p id="241e5d7f-bd86-80a2-974c-eef0ca4efa1c" class="">outros comandos úteis:</p><ul id="241e5d7f-bd86-80a4-a6ad-dd9f9fe0417c" class="bulleted-list"><li style="list-style-type:disc">ctrl + b faz a aba onde ficam os .py retrair.</li></ul><ul id="241e5d7f-bd86-80bc-9b85-fe79c9a9b864" class="bulleted-list"><li style="list-style-type:disc">ctrl + k e depos z fica no modo foco, em tela cheia.</li></ul><ul id="241e5d7f-bd86-8009-8d86-e6bfd93497c6" class="bulleted-list"><li style="list-style-type:disc">ctrl + shift + ‘ abre o terminal</li></ul><ul id="241e5d7f-bd86-803f-a6ae-d6ab2907715a" class="bulleted-list"><li style="list-style-type:disc">ctrl+shift+m vai te levar ao erro em seu arquivo<ul id="241e5d7f-bd86-80cb-bf77-f0af7aaaac8e" class="bulleted-list"><li style="list-style-type:circle">f8 para navegar entre os erros.</li></ul></li></ul><ul id="241e5d7f-bd86-8063-b4ca-e22f279f2f4e" class="bulleted-list"><li style="list-style-type:disc">ctrl + alt + up cursor seleciona várias coisas ao mesmo tempo</li></ul><ul id="241e5d7f-bd86-8080-819b-ece17092a359" class="bulleted-list"><li style="list-style-type:disc">ctrl+k ctrl+f selecionar código inteiro<ul id="241e5d7f-bd86-80d7-a5d8-f8c07fb23663" class="bulleted-list"><li style="list-style-type:circle">shift+alt+f formar código</li></ul></li></ul><ul id="241e5d7f-bd86-80a4-bd0b-dc7d646892b3" class="bulleted-list"><li style="list-style-type:disc">ctrl + l selecionar linha atual</li></ul><p id="241e5d7f-bd86-809e-be91-ec218f1e8c28" class="">
+</p><p id="241e5d7f-bd86-80c0-b667-f1913e27d8e2" class="">Aha: se eu for trabalhar com base de dados grande, é bom voltar a estudar estes comandos.</p><p id="241e5d7f-bd86-8056-ab3b-d1217e0fa142" class="">
+</p><p id="241e5d7f-bd86-8066-b54b-c50b86449a61" class="">Gotcha: It’s totally normal to take multiple passes through these tutorials; they are dense, and you are unlikely to use all of the features you encounter regularly</p><p id="243e5d7f-bd86-8068-9119-e65e49f1e34c" class="">
+</p><p id="243e5d7f-bd86-80bc-98ec-f6efac1144b3" class="">As linhas abaixo:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="243e5d7f-bd86-80e0-ac86-d38f0829b0b6" class="code code-wrap"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">mkdir hello =&gt; criar basta
+cd hello =&gt; ir até basta
+code . =&gt; fazer ela aparecer no vscode</code></pre><p id="243e5d7f-bd86-80f6-a3c3-ecfae6eaf63c" class="">
+</p><p id="243e5d7f-bd86-8041-baa8-de771dd9eda4" class="">Um ambiente virtual tem como objetivo garantir que qualquer coisa isolada, existe apenas nele.</p><p id="243e5d7f-bd86-80c5-96e6-f785ed5e2401" class="">
+</p><p id="243e5d7f-bd86-800d-8ae6-cd7fae337619" class="">Recursos:</p><ul id="243e5d7f-bd86-80d3-830f-dc6915fbc3d9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://code.visualstudio.com/docs/python/python-tutorial">https://code.visualstudio.com/docs/python/python-tutorial</a></li></ul><p id="241e5d7f-bd86-8044-9660-ea0c13b944d2" class="">
+</p><p id="241e5d7f-bd86-8063-b297-dd67bfa65106" class="">Coisas importantes e para se aprofundar:</p><ul id="243e5d7f-bd86-80af-9123-db0227c1fcc0" class="bulleted-list"><li style="list-style-type:disc">criar venv</li></ul><ul id="243e5d7f-bd86-8041-93b7-f7f45a9f0c96" class="bulleted-list"><li style="list-style-type:disc">debugar código no vscode</li></ul><ul id="243e5d7f-bd86-80b2-8fa8-ccd10d0f00f9" class="bulleted-list"><li style="list-style-type:disc">gerenciar pacotes no venv<ul id="243e5d7f-bd86-803b-a778-c4f07af3c743" class="bulleted-list"><li style="list-style-type:circle"><code>pip freeze</code></li></ul></li></ul><ul id="243e5d7f-bd86-80d7-a122-d67a3120d7c5" class="bulleted-list"><li style="list-style-type:disc">uv</li></ul><ul id="243e5d7f-bd86-805d-b620-e3f21789dad5" class="bulleted-list"><li style="list-style-type:disc">conda</li></ul><p id="243e5d7f-bd86-8083-9f80-c9e506fb8aae" class="">
+</p><p id="243e5d7f-bd86-805e-aca7-f1ecfbc576e5" class="">Use<code> ctrl + space</code> para obter sugestões, para o teu código.</p><p id="243e5d7f-bd86-8097-bc9d-ebee90d7f2e8" class="">
+</p><p id="241e5d7f-bd86-80d7-8de2-e1cfd6e8b391" class="">Day 1- Python Environment Setup, Industry Project Configuration And Package Management (Tutorial para configurar Anaconda no Vscode)</p><p id="243e5d7f-bd86-8073-b63f-e20a9c593da6" class=""><a href="https://www.youtube.com/watch?v=4s7mOZ07tBc">https://www.youtube.com/watch?v=4s7mOZ07tBc</a></p><p id="243e5d7f-bd86-8088-8fae-fc131d030023" class="">
+</p><p id="243e5d7f-bd86-809e-9931-ec47785934e2" class=""><strong>CondaNavigator</strong> é importante para você saber, quanto env você tem em seu computador, para gerenciar eles.</p><p id="243e5d7f-bd86-80b9-bd00-d862d260980d" class="">
+</p><p id="243e5d7f-bd86-808d-b45d-ec03453556d9" class="">Aha: a questão de usar env é que, geralmente tu estará trabalhando com vários projetos ao mesmo tempo.</p><p id="243e5d7f-bd86-8029-a993-fb2b38e498dd" class="">
+</p><p id="243e5d7f-bd86-80aa-8d98-eb4a4df0cd26" class="">Há duas formas de criar um env com conda:</p><ul id="243e5d7f-bd86-8081-9463-fcdd24b1478c" class="bulleted-list"><li style="list-style-type:disc"><code>conda create -p venv python==3.12</code></li></ul><ul id="243e5d7f-bd86-80ca-b3fb-d867acfc4e00" class="bulleted-list"><li style="list-style-type:disc"><code>conda create -n venv python==3.12</code></li></ul><p id="243e5d7f-bd86-8055-82ae-d6eb05b95266" class="">
+</p><p id="241e5d7f-bd86-8005-b98d-ff7adf357164" class="">-p: o ambiente criado será com o que já existe na pasta do projeto.</p><p id="243e5d7f-bd86-8089-9d3d-d7a33570cbf8" class="">-n: cria ambiente da pasta do conda</p><p id="243e5d7f-bd86-80b9-b0c6-c0c734ae50de" class="">
+</p><p id="243e5d7f-bd86-800c-b00d-ebaef6415fa1" class="">após criar um <code>venv</code>, você ativa ele, com <code>conda activate venv/</code>. Isto é feito para que os pacotes se limitem a esse venv.</p><p id="243e5d7f-bd86-80f7-87c0-c38247a81b30" class="">
+</p><h2 id="243e5d7f-bd86-80ed-aa6f-e42f784dc05c" class="">Aula 4</h2><blockquote id="243e5d7f-bd86-8061-a1ed-c12614c92b29" class=""><strong>i’ve found that building is the most effective way of learning when it comes to AI/ML engineering.</strong></blockquote><p id="243e5d7f-bd86-80c7-a847-fbbf8e4979dc" class="">
+</p><p id="243e5d7f-bd86-8061-8348-d8fea2222cc2" class="">coisas que eu preciso aprender:</p><ul id="243e5d7f-bd86-80b6-94b3-f36fae62e34c" class="bulleted-list"><li style="list-style-type:disc"><strong>dataset loading, </strong></li></ul><ul id="243e5d7f-bd86-8009-abf5-ef924dd9e0c9" class="bulleted-list"><li style="list-style-type:disc"><strong>tokenization, </strong></li></ul><ul id="243e5d7f-bd86-805d-a0fd-f07ecd4b72e6" class="bulleted-list"><li style="list-style-type:disc"><strong>and fine-tuning.</strong></li></ul><p id="243e5d7f-bd86-8032-a0af-d489cb5d9a0f" class="">
+</p><p id="243e5d7f-bd86-80c2-ac02-f0035468ec3e" class="">coisas que devo aprender II</p><ul id="243e5d7f-bd86-80c7-b8b6-c254dc7f09db" class="bulleted-list"><li style="list-style-type:disc"><strong>Load up and process a natural language processing dataset using the datasets library.</strong></li></ul><ul id="243e5d7f-bd86-804e-8c0d-d5a738ab124e" class="bulleted-list"><li style="list-style-type:disc"><strong>Tokenize a text sequence, and understand the steps used in tokenization.</strong></li></ul><ul id="243e5d7f-bd86-80de-b63c-f2ac13f3d8a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Construct a dataset and training step for causal language modeling</strong></li></ul><p id="243e5d7f-bd86-803a-821a-e40187e456ce" class="">
+</p><p id="244e5d7f-bd86-8047-bc66-c46f49c431a0" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-805d-9098-d080de2022ab" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">%%capture
+pip install transformers datasets</code></pre><p id="244e5d7f-bd86-8012-b6a4-e1e89b4e6595" class="">essa linha instala as duas bibliotecas que precisamos:</p><ul id="244e5d7f-bd86-8090-9141-e498e286ad18" class="bulleted-list"><li style="list-style-type:disc">hf tranformers</li></ul><ul id="244e5d7f-bd86-8017-b993-f27fe97910c5" class="bulleted-list"><li style="list-style-type:disc">datasets</li></ul><p id="244e5d7f-bd86-80f4-b973-de14a54051b9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8000-a756-e910e1aea5b7" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from datasets import load_dataset
+dataset = load_dataset(&quot;nunorc/squad_v1_pt&quot;)
+dataset</code></pre><p id="244e5d7f-bd86-80c3-83f0-f8cbbe012f4c" class="">
+</p><p id="244e5d7f-bd86-80c8-8bbe-e6fd5f40157c" class="">esse é o padrão para ler qualquer dataset do hf, fiz uma busca mas não achei dataset br de Q&amp;A.</p><p id="244e5d7f-bd86-8021-b718-dd3dec8bb9ef" class="">
+</p><p id="244e5d7f-bd86-80b9-9df2-c0f83f427868" class="">poderia testar em outro dataset, essa task, para criar uma variação.</p><p id="244e5d7f-bd86-80f3-b04d-fb3a3db45f20" class="">
+</p><p id="244e5d7f-bd86-80f9-b423-c25b2a8533ef" class="">squad-1 em pt-br: <a href="https://huggingface.co/datasets/nunorc/squad_v1_pt">https://huggingface.co/datasets/nunorc/squad_v1_pt</a></p><p id="244e5d7f-bd86-80ec-8b7e-d00bb7348461" class="">
+</p><p id="244e5d7f-bd86-80dc-b78a-d4901a823307" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8089-9b42-e1d6e99ea872" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def add_end_of_text(example):
+    example[&#x27;question&#x27;] =  example[&#x27;question&#x27;] + &#x27;&lt;|endoftext|&gt;&#x27;
+    return example
+
+dataset = dataset.remove_columns([&#x27;id&#x27;, &#x27;title&#x27;, &#x27;context&#x27;, &#x27;answers&#x27;])
+dataset = dataset.map(add_end_of_text)</code></pre><p id="244e5d7f-bd86-8099-b940-c73749c1692d" class="">
+</p><p id="244e5d7f-bd86-80a2-916d-d4cdd4f0d120" class="">esse <code>&#x27;&lt;|endoftext|&gt;&#x27;</code> serve para o caso em que juntamos duas sentenças em um único bloco. e.g <code>gosto de comer &lt;endoftext&gt; eu adorei.</code></p><p id="244e5d7f-bd86-80d7-bafa-d8d4a5695427" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8046-b51d-c20820d2b4a5" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from transformers import AutoTokenizer
+model_checkpoint = &quot;tubyneto/bertimbau&quot;
+
+tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=True)</code></pre><p id="244e5d7f-bd86-80c4-84e5-e30bb5c909fa" class="">
+</p><p id="244e5d7f-bd86-80be-9bae-d276c58406a5" class="">este trecho carrega o modelo que irá tokenizar as frases.</p><p id="244e5d7f-bd86-80a4-96c5-dbd20415e418" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8060-a2a9-df9f2cf6f16b" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">sequence = (&quot;Está tokenização está sendo aplicada emp pt-br&quot;
+            &quot;Por CLL.&lt;|endoftext|&gt;&quot;)
+
+tokens = tokenizer.tokenize(sequence)
+print(tokens)</code></pre><p id="244e5d7f-bd86-8002-8cf0-d2258830b45a" class="">este trecho é um teste do tokenizer.</p><p id="244e5d7f-bd86-80a5-83d0-ebd62257fa80" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-80cd-a6d2-edf5955bd7fb" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">ids = tokenizer.convert_tokens_to_ids(tokens)
+print(ids)</code></pre><p id="244e5d7f-bd86-801b-a737-d3d142a7bc5e" class="">
+</p><p id="244e5d7f-bd86-8095-ab12-ef4b569db405" class="">convertar tokens para id é convertar para uma linguagem que o computador entende.</p><p id="244e5d7f-bd86-8099-860a-fe30a8230a70" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8030-9d07-d6d96cfa60e9" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">tokenizer(sequence)</code></pre><p id="244e5d7f-bd86-8076-aa64-c75f827a195c" class="">o resultado é este:<br/><code>{&#x27;input_ids&#x27;: [101, 3882, 374, 8110, 910, 698, 660, 11107, 4276, 126, 22286, 118, 235, 22282, 7313, 187, 22327, 22327, 119, 133, 196, 15188, 2356, 1916, 22286, 196, 135, 102], &#x27;token_type_ids&#x27;: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], &#x27;attention_mask&#x27;: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}</code></p><p id="244e5d7f-bd86-8065-be79-e2217e04c4a0" class="">
+</p><p id="244e5d7f-bd86-8025-984a-c02b96a76ec2" class="">este trecho diz em qual parte da palavra o modelo deve prestar mais atenção.</p><p id="244e5d7f-bd86-8091-b495-ffe079b99127" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-80f3-b5e3-f07f63d0d2b5" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def tokenize_function(examples):
+    return tokenizer(examples[&quot;question&quot;], truncation=True)
+
+tokenized_datasets = dataset.map(
+    tokenize_function,
+    batched=True,
+    num_proc=4,
+    remove_columns=[&quot;question&quot;]
+)</code></pre><p id="244e5d7f-bd86-8050-9034-e94ed55a249c" class="">
+</p><p id="244e5d7f-bd86-8064-9be4-ece0ae5dec14" class="">Isto cria um dataset especial, com aqueles elementos que dizem o que importa.</p><p id="244e5d7f-bd86-80b6-aed0-ce64107dd372" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8068-a7c4-cbeb12c07cab" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Dataset({
+    features: [&#x27;input_ids&#x27;, &#x27;token_type_ids&#x27;, &#x27;attention_mask&#x27;],
+    num_rows: 87599
+})</code></pre><p id="244e5d7f-bd86-80a9-b338-d4a8c0f063a7" class="">
+</p><p id="244e5d7f-bd86-80e2-afab-f84d139a48a7" class="">observe que “question” foi removido do treino e da validação.</p><p id="244e5d7f-bd86-80fe-ba7c-e3cccdfdc4d4" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8053-9d8e-f9654a8f4f05" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">block_size = 128
+
+def group_texts(examples):
+    # repeat concatenation for input_ids and other keys
+    concatenated_examples = {k: sum(examples[k], []) for k in
+                            examples.keys()}
+    total_length = len(concatenated_examples[list(examples.keys())[0]])
+    total_length = (total_length // block_size) * block_size
+
+    # populate each of input_ids and other keys
+    result = {
+        k: [t[i : i + block_size] for i in range(0,
+            total_length, block_size)]
+        for k, t in concatenated_examples.items()
+    }
+    # add labels because we&#x27;ll need it as the output
+    result[&quot;labels&quot;] = result[&quot;input_ids&quot;].copy()
+    return result
+
+lm_datasets = tokenized_datasets.map(
+    group_texts,
+    batched=True,
+    batch_size=1000,
+    num_proc=4,
+)</code></pre><p id="244e5d7f-bd86-8083-b05a-eb754aab6da4" class="">
+</p><p id="244e5d7f-bd86-80fb-8ed0-e13b55d0de8c" class="">esse código configura:</p><ul id="244e5d7f-bd86-8096-b865-c3375fc37a98" class="bulleted-list"><li style="list-style-type:disc">tamanho do texto</li></ul><ul id="244e5d7f-bd86-8042-947a-e45b9a83b0d2" class="bulleted-list"><li style="list-style-type:disc">eficiência no processamento</li></ul><p id="244e5d7f-bd86-80af-b37d-f4c69dad4a45" class="">
+</p><p id="244e5d7f-bd86-8004-9bb6-db47de0a1201" class="">são regras para como o modelo irá receber os textos.</p><p id="244e5d7f-bd86-8049-8c38-efdce7f64450" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-8007-8072-d8d7b90383be" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">small_train_dataset = \
+    lm_datasets[&quot;train&quot;].shuffle(seed=42).select(range(100))
+    
+small_eval_dataset = \
+    lm_datasets[&quot;validation&quot;].shuffle(seed=42).select(range(100))</code></pre><p id="244e5d7f-bd86-8040-ab59-e6e13af9aa8c" class="">
+</p><p id="244e5d7f-bd86-8010-aa56-ce78b039869d" class="">estou pegando uma fração dos dados, posso ajustar depois para quantos exemplos quiser.</p><p id="244e5d7f-bd86-80aa-8c2c-c84099a5c5d9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-800f-bf19-fa5077433800" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from transformers import AutoModelForCausalLM, TrainingArguments, Trainer
+model = AutoModelForCausalLM.from_pretrained(&quot;tubyneto/bertimbau&quot;)</code></pre><p id="244e5d7f-bd86-80d4-9a91-f2d313f5478b" class="">chamar modelo, novamente.</p><p id="244e5d7f-bd86-80fe-8ef6-f175eff41dd1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-804e-9894-f0226328d92e" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">training_args = TrainingArguments(
+    f&quot;{model_checkpoint}-squad&quot;,
+    learning_rate=2e-5,
+    weight_decay=0.01,
+
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=small_train_dataset,
+    eval_dataset=small_eval_dataset,
+)
+
+trainer.train()</code></pre><p id="244e5d7f-bd86-80e8-a1a9-d18298adf3cf" class="">definir argumentos do trainamento e treinar.</p><p id="244e5d7f-bd86-80e3-90d2-cd10e5af4038" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="244e5d7f-bd86-801a-8e04-ee5e632928bb" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import math
+eval_results = trainer.evaluate()
+print(f&quot;Perplexity: {math.exp(eval_results[&#x27;eval_loss&#x27;]):.2f}&quot;)</code></pre><p id="244e5d7f-bd86-80b8-9709-d05c4ddb7e60" class="">avaliar modelo.</p><p id="244e5d7f-bd86-8098-8640-c74945070980" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="245e5d7f-bd86-80ca-9426-ca0a7c09a1be" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">tokenizer.save_pretrained(f&quot;{model_checkpoint}-squad&quot;)
+model.push_to_hub(f&quot;{model_checkpoint}-squad&quot;)</code></pre><p id="245e5d7f-bd86-80b1-b74a-df358a54e0a1" class="">o objetivo das duas linhas é salvar o modelo e enviar ao hf hub.</p><p id="245e5d7f-bd86-800e-96d7-e85bee46cbde" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="245e5d7f-bd86-8051-a8cc-cd88aef805cc" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from transformers import AutoModelForCausalLM, AutoTokenizer
+model = AutoModelForCausalLM.from_pretrained(f&quot;rajpurkar/{model_checkpoint}-squad&quot;)
+tokenizer = AutoTokenizer.from_pretrained(f&quot;rajpurkar/{model_checkpoint}-squad&quot;)</code></pre><p id="245e5d7f-bd86-8047-a25a-d7332bdb677e" class="">carregar o modelo</p><p id="245e5d7f-bd86-80dc-a1be-ce9920fed714" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="245e5d7f-bd86-80a4-8110-fa636788a3a9" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">start_text = (&quot;A speedrun is a playthrough of a video game, \
+or section of a video game, with the goal of \
+completing it as fast as possible. Speedruns \
+often follow planned routes, which may incorporate sequence \
+breaking, and might exploit glitches that allow sections to \
+be skipped or completed more quickly than intended. &quot;)
+
+prompt = &quot;What is the&quot;
+inputs = tokenizer(
+     start_text + prompt,
+     add_special_tokens=False,
+     return_tensors=&quot;pt&quot;)[&quot;input_ids&quot;]
+
+prompt_length = len(tokenizer.decode(inputs[0]))
+outputs = model.generate(
+     inputs,
+     max_length=100,
+     do_sample=True,
+     top_k=50,
+     top_p=0.95,
+     temperature=0.9,
+     num_return_sequences=3)
+
+generated = prompt + tokenizer.decode(outputs[0])[prompt_length + 1:]
+
+print(tokenizer.decode(outputs[0]))</code></pre><p id="245e5d7f-bd86-80bc-b1d7-df650438c98e" class="">produzir inferência/fazer previsões</p><p id="245e5d7f-bd86-8048-be2c-e60b63397271" class="">
+</p><p id="245e5d7f-bd86-8028-8516-e6f19c57bd15" class="">Essas aulas me trouxeram alguns insights:</p><ul id="245e5d7f-bd86-8007-a396-e54596d854f4" class="bulleted-list"><li style="list-style-type:disc">aplicar fine-tuning usando DeepSeek no squad-pt-v1</li></ul><ul id="245e5d7f-bd86-8047-b3ab-cb224a8b8367" class="bulleted-list"><li style="list-style-type:disc">estudar unsloth</li></ul><p id="245e5d7f-bd86-80ee-a82c-e33357fb8822" class="">
+</p><p id="245e5d7f-bd86-80de-a1c9-c4f2e9cf00ea" class=""><a href="https://www.datacamp.com/pt/tutorial/fine-tuning-deepseek-r1-reasoning-model">https://www.datacamp.com/pt/tutorial/fine-tuning-deepseek-r1-reasoning-model</a></p><p id="245e5d7f-bd86-8097-9145-c5c62a09b1f8" class=""><a href="https://www.datacamp.com/pt/tutorial/unsloth-guide-optimize-and-speed-up-llm-fine-tuning">https://www.datacamp.com/pt/tutorial/unsloth-guide-optimize-and-speed-up-llm-fine-tuning</a></p><p id="246e5d7f-bd86-808c-a674-e0959334159d" class="">
+</p><h2 id="246e5d7f-bd86-80e7-b7b9-c1b2fd118b23" class="">Aula 5</h2><p id="246e5d7f-bd86-80cd-b8a0-c730bd70761c" class="">gotcha: leia código para aprender, use engenharia reversa para entender a razão de algo está onde está.</p><p id="246e5d7f-bd86-80a2-8fa2-c3e781611d7e" class="">
+</p><p id="246e5d7f-bd86-801c-aa51-c0e954704fcb" class="">uma grande dica na programação é procurar por ‘workflows’.</p><p id="246e5d7f-bd86-80db-a0e9-d0121255465f" class="">
+</p><p id="246e5d7f-bd86-80b9-b6e6-f75cef736c4d" class="">O que precisa ser aprendido:</p><ul id="246e5d7f-bd86-80e4-9006-d5f9c053d5aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Interact with code to explore data loading and tokenization of images for Vision Transformers.</strong></li></ul><ul id="246e5d7f-bd86-80dc-a863-db08846d5504" class="bulleted-list"><li style="list-style-type:disc"><strong>Parse code for PyTorch architecture and modules for building a Vision Transformer.</strong></li></ul><ul id="246e5d7f-bd86-8080-b7f8-db5dd0df2a0c" class="bulleted-list"><li style="list-style-type:disc"><strong>Get acquainted with an example training workflow with PyTorch Lightning.</strong></li></ul><p id="246e5d7f-bd86-8052-8d85-d22b98f53356" class="">
+</p><p id="246e5d7f-bd86-8025-8d47-ed3745a4839c" class="">
+</p><p id="246e5d7f-bd86-80b3-9a29-e4b621ee5dab" class="">Parse ⇒ analisar</p><p id="246e5d7f-bd86-809c-a3ab-f932ad2aafdc" class="">
+</p><p id="246e5d7f-bd86-80f4-b926-c4e8c9dca2f7" class="">Pytorch lightning facilita o seu código, abstraindo a engenharia necessário para treinar um modelo.</p><p id="246e5d7f-bd86-800d-b771-ef9b45a89667" class="">
+</p><p id="246e5d7f-bd86-8043-a569-e1ed3da71896" class="">o lightning ajuda ao pytorch determinar com o treinamento será quanto as interações e aos otimizados.</p><p id="246e5d7f-bd86-80f9-8dd4-d7a51e8a0493" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="246e5d7f-bd86-80c8-bd55-c8335fe95691" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">class LitAutoEncoder(L.LightningModule):
+    def __init__(self, encoder, decoder):
+        super().__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def training_step(self, batch, batch_idx):
+        # training_step defines the train loop.
+        x, _ = batch
+        x = x.view(x.size(0), -1)
+        z = self.encoder(x)
+        x_hat = self.decoder(z)
+        loss = F.mse_loss(x_hat, x)
+        return loss
+
+    def configure_optimizers(self):
+        optimizer = torch.optim.Adam(self.parameters(), lr=1e-3)
+        return optimizer</code></pre><p id="246e5d7f-bd86-808d-8002-e5a76c7f7ab9" class="">
+</p><p id="246e5d7f-bd86-8002-bc07-f68c54e041cd" class="">Tutorial: <a href="https://lightning.ai/docs/pytorch/latest/levels/core_skills.html">https://lightning.ai/docs/pytorch/latest/levels/core_skills.html</a></p><p id="246e5d7f-bd86-8079-905b-cf6f7a9ab3aa" class="">
+</p><p id="246e5d7f-bd86-80ea-9447-fbcb668bd449" class="">Pro tip: there are competition strategies to apply what’s called test time augmentations, where multiple augmented images are passed through the network and their outputs averaged to get a more performant model. </p><p id="246e5d7f-bd86-808b-8b96-ef99259624e2" class="">
+</p><p id="246e5d7f-bd86-80e7-902d-d261ee141cd9" class="">aha: É importante ler o código de uma vez, não é na primeira tentativa que tudo ficará claro.</p><p id="246e5d7f-bd86-80c5-886c-c306b6f69507" class="">
+</p><p id="246e5d7f-bd86-8067-a9a2-ffe8b2167997" class="">dataloader nos permite interagir com o dataset em pacotes (bachts)</p><p id="247e5d7f-bd86-80d3-9359-e207bf1ce1c0" class="">
+</p><p id="247e5d7f-bd86-8093-b182-ef881ed8046b" class="">Analisando código linha-por-lina</p><p id="247e5d7f-bd86-8030-90b6-f629591f74c9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-80c8-8050-df85c729f22c" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from torchvision import transforms
+from torchvision.datasets import CIFAR10
+import pytorch_lightning as pl
+import os</code></pre><p id="247e5d7f-bd86-806b-bb1a-ef5f65fb5d81" class="">são as bibliotecas usadas, o pytorch lightning é para agilizar o processo, no uso do pytorch.</p><p id="247e5d7f-bd86-8035-9a3f-f32feb890868" class="">
+</p><p id="247e5d7f-bd86-8055-960c-e477927f190c" class="">pytorch lightning torna o código mais legível e ajuda a encontrar um lr melhor.</p><p id="247e5d7f-bd86-800f-ad68-f97b290ccfe3" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-8009-8abb-d6324715d963" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">DATASET_PATH = os.environ.get(&quot;PATH_DATASETS&quot;, &quot;data/&quot;)</code></pre><p id="247e5d7f-bd86-80af-aabb-e4abb757cd4f" class="">procura por informações em um ambiente com o nome “PATH_DATASETS”, possível seja para guardar os dados.</p><p id="247e5d7f-bd86-8040-883d-dddd81d48ac8" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-8019-ad74-f840692565e2" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">train_transform = transforms.Compose(
+    [
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomResizedCrop(
+            (32, 32), scale=(0.8, 1.0), ratio=(0.9, 1.1)),
+        transforms.ToTensor(),
+        transforms.Normalize([0.49139968, 0.48215841, 0.44653091],
+            [0.24703223, 0.24348513, 0.26158784]),
+    ]
+)</code></pre><p id="247e5d7f-bd86-806d-8659-dd1f66bfbe52" class="">isto está criando alterações no nosso conjunto de imagens.</p><p id="247e5d7f-bd86-8010-978c-f688350056f6" class="">huh: porque esses números e o que eles significam?</p><p id="247e5d7f-bd86-804b-a9c1-fea25f1203e4" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-8001-8edb-e239d991e858" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">test_transform = transforms.Compose(
+    [
+        transforms.ToTensor(),
+        transforms.Normalize([0.49139968, 0.48215841, 0.44653091],
+        [0.24703223, 0.24348513, 0.26158784]),
+    ]
+)</code></pre><p id="247e5d7f-bd86-80c7-be24-d543b60a1e28" class="">no conjunto de teste, queremos apenas normalizar e acelerar o treinamento.</p><p id="247e5d7f-bd86-80dd-a63e-c559d8984a2f" class="">
+</p><p id="247e5d7f-bd86-80bf-af3b-c00a88bc45e1" class="">huh: porque normalizar o conjunto de teste?</p><p id="247e5d7f-bd86-80b6-b4c9-d47af46ea20c" class="">
+</p><p id="247e5d7f-bd86-800c-ab9b-c89bab09a57f" class="">normalizar acelera o teste e o treino. não sei a razão pela qual isso é possível, talvez porque o range é menor (dos valores).</p><p id="247e5d7f-bd86-8091-8f19-e737b48f02e7" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-8020-a600-de74cbfa1ce2" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">train_dataset = CIFAR10(
+    root=DATASET_PATH, train=True, transform=train_transform,download=True)
+val_dataset = CIFAR10(
+    root=DATASET_PATH, train=True, transform=test_transform, download=True)
+test_set = CIFAR10(
+    root=DATASET_PATH, train=False, transform=test_transform,download=True)</code></pre><p id="247e5d7f-bd86-802b-b3b7-d69b813f282f" class="">carrega treino</p><p id="247e5d7f-bd86-8029-871e-d8a9a58200d3" class="">validação do treino</p><p id="247e5d7f-bd86-809d-ad82-d00e2a4d04fd" class="">teste (totalmente novos, não visto no treino)</p><p id="247e5d7f-bd86-80f7-be29-e1cff00fc4ed" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247e5d7f-bd86-8023-9c3c-d261b86bd7b0" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+import torch.utils.data as data
+
+pl.seed_everything(42)
+train_set, _ = torch.utils.data.random_split(train_dataset, [45000, 5000])
+pl.seed_everything(42)
+_, val_set = torch.utils.data.random_split(val_dataset, [45000, 5000])</code></pre><p id="248e5d7f-bd86-80a4-a88b-d7697ad83bf6" class="">ajusta o tamanho dos datasets de treino e validação.</p><p id="248e5d7f-bd86-80dc-9033-f9497406b679" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-8039-89e9-c89efd877838" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import matplotlib.pyplot as plt
+import torchvision
+
+# Visualize some examples
+NUM_IMAGES = 4
+CIFAR_images = torch.stack(
+    [val_set[idx][0] for idx in range(NUM_IMAGES)], dim=0)
+img_grid = torchvision.utils.make_grid(
+    CIFAR_images, nrow=4, normalize=True, pad_value=0.9)
+img_grid = img_grid.permute(1, 2, 0)
+
+plt.figure(figsize=(8, 8))
+plt.title(&quot;Image examples of the CIFAR10 dataset&quot;)
+plt.imshow(img_grid)
+plt.axis(&quot;off&quot;)
+plt.show()
+plt.close()</code></pre><p id="248e5d7f-bd86-8067-80cb-de08a537f8f9" class="">plotar as imagens dos dataset val.</p><p id="248e5d7f-bd86-80f5-b634-dbb8973ccfbe" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-801b-afc9-f2eef9435ad0" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">train_loader = data.DataLoader(
+    train_set, batch_size=16,
+    shuffle=True, drop_last=True, pin_memory=True, num_workers=0)
+val_loader = data.DataLoader(
+    val_set, batch_size=16,
+    shuffle=False, drop_last=False, num_workers=0)
+test_loader = data.DataLoader(
+    test_set, batch_size=16,
+    shuffle=False, drop_last=False, num_workers=0)</code></pre><p id="248e5d7f-bd86-805e-8d0d-e8f0f83bae1d" class="">prepara o dataset para o treino, define:</p><ul id="248e5d7f-bd86-80c2-99c0-c29ae8984564" class="bulleted-list"><li style="list-style-type:disc">quantos dados serão analisados por vez</li></ul><ul id="248e5d7f-bd86-80a2-9e9d-d2941606e335" class="bulleted-list"><li style="list-style-type:disc">quanta força o computador deve usar</li></ul><ul id="248e5d7f-bd86-80e6-b674-f4b6f6073851" class="bulleted-list"><li style="list-style-type:disc">embaralha os dados</li></ul><p id="248e5d7f-bd86-8077-a422-e4aa0f6c9f8f" class="">
+</p><p id="248e5d7f-bd86-8051-963e-e61b38b64b06" class="">organiza como os dados serão entregues a rede neural.</p><p id="248e5d7f-bd86-806e-aab3-e5aa2f2e416d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-808c-b569-d6f8fb42ebb8" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def img_to_patch(x, patch_size, flatten_channels=True):
+    &quot;&quot;&quot;
+    Inputs:
+        x - Tensor representing the image of shape [B, C, H, W]
+        patch_size - Number of pixels per dimension of the
+            patches (integer)
+        flatten_channels - If True, the patches will be
+            returned in a flattened format as a feature
+            vector instead of a image grid.
+    &quot;&quot;&quot;
+    B, C, H, W = x.shape
+    x = x.reshape(
+        B,
+        C,
+        torch.div(H, patch_size, rounding_mode=&#x27;trunc&#x27;),
+        patch_size,
+        torch.div(W, patch_size, rounding_mode=&#x27;floor&#x27;),
+        patch_size,
+    )
+    x = x.permute(0, 2, 4, 1, 3, 5)  # [B, H&#x27;, W&#x27;, C, p_H, p_W]
+    x = x.flatten(1, 2)  # [B, H&#x27;*W&#x27;, C, p_H, p_W]
+    if flatten_channels:
+        x = x.flatten(2, 4)  # [B, H&#x27;*W&#x27;, C*p_H*p_W]
+    return x
+
+img_patches = img_to_patch(
+    CIFAR_images, patch_size=4, flatten_channels=False)
+
+img_patches.shape</code></pre><p id="248e5d7f-bd86-80e8-9f59-cdcc5bfa414d" class="">corta as imagens, extrai as dimensões, provavelmente para facilitar o treinamento. é um processo de tokenização.</p><p id="248e5d7f-bd86-806a-bd15-c4f13f4a6b92" class="">
+</p><p id="248e5d7f-bd86-8009-922c-e9acbce45c89" class="">
+</p><p id="248e5d7f-bd86-80c2-b3d7-da93e2d135c5" class="">huh: e se as dimensões do dataset fossem diferente.</p><p id="248e5d7f-bd86-80df-b4e1-d65b32a26ab4" class="">huh: porque não está pegando os dados de treino? nem de teste</p><p id="248e5d7f-bd86-808b-844d-e782efbc5a11" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-809f-a71f-e274448a2ede" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">fig, ax = plt.subplots(CIFAR_images.shape[0], 1, figsize=(14, 3))
+fig.suptitle(&quot;Images as input sequences of patches&quot;)
+for i in range(CIFAR_images.shape[0]):
+    img_grid = torchvision.utils.make_grid(
+        img_patches[i], nrow=64, normalize=True, pad_value=0.9)
+    img_grid = img_grid.permute(1, 2, 0)
+    ax[i].imshow(img_grid)
+    ax[i].axis(&quot;off&quot;)
+plt.show()
+plt.close()</code></pre><p id="248e5d7f-bd86-80c7-a601-e2af6fbbcf41" class="">plota o que foi feito na etapa anterior.</p><p id="248e5d7f-bd86-8030-90e2-e5f30d6c854b" class="">
+</p><figure id="248e5d7f-bd86-80d3-a32c-c362fc501809" class="image"><a href="image%201.png"><img style="width:364.9910888671875px" src="image%201.png"/></a></figure><p id="248e5d7f-bd86-8062-b7ff-d65ff4e2f380" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-806b-9dac-c64efcc1acc2" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">torch.backends.cudnn.determinstic = True
+torch.backends.cudnn.benchmark = False
+
+device = torch.device(&quot;cuda:0&quot;) if torch.cuda.is_available() else torch.device(&quot;cpu&quot;)
+print(&quot;Device:&quot;, device)</code></pre><p id="248e5d7f-bd86-8077-967f-e1b42a3830b8" class="">verificar se tem gpu</p><p id="248e5d7f-bd86-8074-b8cf-f2b6d986376c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-80de-b515-c6cb43bb462f" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch.nn as nn
+
+class AttentionBlock(nn.Module):
+    def __init__(self, embed_dim, hidden_dim, num_heads, dropout=0.0):
+        super().__init__()
+
+        self.layer_norm_1 = nn.LayerNorm(embed_dim)
+        self.attn = nn.MultiheadAttention(embed_dim, num_heads)
+        self.layer_norm_2 = nn.LayerNorm(embed_dim)
+        self.linear = nn.Sequential(
+            nn.Linear(embed_dim, hidden_dim),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, embed_dim),
+            nn.Dropout(dropout),
+        )
+
+    def forward(self, x):
+        inp_x = self.layer_norm_1(x)
+        x = x + self.attn(inp_x, inp_x, inp_x)[0]
+        x = x + self.linear(self.layer_norm_2(x))
+        return x</code></pre><p id="248e5d7f-bd86-80bf-9f3c-c86d2ebe1acd" class="">construir nn usando attention com pytorch</p><p id="248e5d7f-bd86-8083-aa16-dd6c568f204c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-804c-a544-d07d36ef8ad2" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">class VisionTransformer(nn.Module):
+    def __init__(
+        self,
+        embed_dim,
+        hidden_dim,
+        num_channels,
+        num_heads,
+        num_layers,
+        num_classes,
+        patch_size,
+        num_patches,
+        dropout=0.0,
+    ):
+        super().__init__()
+        self.patch_size = patch_size
+
+        # Layers/Networks
+        self.input_layer = nn.Linear(
+            num_channels * (patch_size**2), embed_dim)
+        self.transformer = nn.Sequential(
+            *(AttentionBlock(
+                embed_dim, hidden_dim, num_heads, dropout=dropout)
+                    for _ in range(num_layers))
+        )
+        self.mlp_head = nn.Sequential(
+            nn.LayerNorm(embed_dim), nn.Linear(embed_dim, num_classes))
+        self.dropout = nn.Dropout(dropout)
+
+        # Parameters/Embeddings
+        self.cls_token = nn.Parameter(
+            torch.randn(1, 1, embed_dim))
+        self.pos_embedding = nn.Parameter(
+            torch.randn(1, 1 + num_patches, embed_dim))
+
+    def forward(self, x):
+        x = img_to_patch(x, self.patch_size)
+        B, T, _ = x.shape
+        x = self.input_layer(x)
+
+        cls_token = self.cls_token.repeat(B, 1, 1)
+        x = torch.cat([cls_token, x], dim=1)
+        x = x + self.pos_embedding[:, : T + 1]
+        x = self.dropout(x)
+        x = x.transpose(0, 1)
+        x = self.transformer(x)
+        cls = x[0]
+        out = self.mlp_head(cls)
+        return out</code></pre><p id="248e5d7f-bd86-8029-8ad1-f8924127d7fc" class="">se antes tínhamos as peças, agora temos o robô/modelo completo para classificar imagens.</p><p id="248e5d7f-bd86-806b-b5e6-e323a20b910b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-80ce-b1ba-ef65c29c6f58" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch.nn.functional as F
+import torch.optim as optim
+
+class ViT(pl.LightningModule):
+    def __init__(self, model_kwargs, lr):
+        super().__init__()
+        self.save_hyperparameters()
+        self.model = VisionTransformer(**model_kwargs)
+
+    def forward(self, x):
+        return self.model(x)
+
+    def configure_optimizers(self):
+        optimizer = optim.AdamW(self.parameters(), lr=self.hparams.lr)
+        lr_scheduler = optim.lr_scheduler.MultiStepLR(
+            optimizer, milestones=[100, 150], gamma=0.1)
+        return [optimizer], [lr_scheduler]
+
+    def _calculate_loss(self, batch, mode=&quot;train&quot;):
+        imgs, labels = batch
+        preds = self.model(imgs)
+        loss = F.cross_entropy(preds, labels)
+        acc = (preds.argmax(dim=-1) == labels).float().mean()
+
+        self.log(&quot;%s_loss&quot; % mode, loss, prog_bar=True)
+        self.log(&quot;%s_acc&quot; % mode, acc, prog_bar=True)
+        return loss
+
+    def training_step(self, batch, batch_idx):
+        loss = self._calculate_loss(batch, mode=&quot;train&quot;)
+        return loss
+
+    def validation_step(self, batch, batch_idx):
+        self._calculate_loss(batch, mode=&quot;val&quot;)
+
+    def test_step(self, batch, batch_idx):
+        self._calculate_loss(batch, mode=&quot;test&quot;)</code></pre><p id="248e5d7f-bd86-8069-b7b3-c725d40b6bcf" class="">treinador com pytorch lightning para facilitar o treinamento.</p><p id="248e5d7f-bd86-8012-a501-e7a61df3e551" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-80f9-a833-e4ad3a626068" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">CHECKPOINT_PATH = os.environ.get(
+    &quot;PATH_CHECKPOINT&quot;,
+    &quot;saved_models/VisionTransformers/&quot;)
+
+def train_model(**kwargs):
+    trainer = pl.Trainer(
+        default_root_dir=os.path.join(CHECKPOINT_PATH, &quot;ViT&quot;),
+        fast_dev_run=5,
+    )
+
+    pl.seed_everything(42)  # To be reproducible
+    model = ViT(**kwargs)
+    trainer.fit(model, train_loader, val_loader)
+    test_result = trainer.test(
+        model, dataloaders=test_loader, verbose=False)
+    return model, test_result</code></pre><p id="248e5d7f-bd86-800e-8479-e517394a2520" class="">é como um botão que dá largada ao treinamento.</p><p id="248e5d7f-bd86-8072-894c-de4525df010b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="248e5d7f-bd86-8020-9714-cd62d2fd9995" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">model, results = train_model(
+    model_kwargs={
+        &quot;embed_dim&quot;: 256,
+        &quot;hidden_dim&quot;: 512,
+        &quot;num_heads&quot;: 8,
+        &quot;num_layers&quot;: 6,
+        &quot;patch_size&quot;: 4,
+        &quot;num_channels&quot;: 3,
+        &quot;num_patches&quot;: 64,
+        &quot;num_classes&quot;: 10,
+        &quot;dropout&quot;: 0.2,
+    },
+    lr=3e-4,
+)
+print(&quot;Results&quot;, results)</code></pre><p id="248e5d7f-bd86-807c-a709-f4e6741c65e9" class="">treinar modelo, de fato.</p><p id="249e5d7f-bd86-80dd-bc77-eb463cb518ad" class="">
+</p><h2 id="249e5d7f-bd86-80ab-a2d7-d590bad19e0b" class="">Aula 6 &amp; 7</h2><p id="249e5d7f-bd86-80fc-a542-cb5556b01323" class="">Tensores são importantes para os LLMs, guardam os inputs e outputs. são como vetores e matrizes.</p><p id="249e5d7f-bd86-8014-a109-d040f674b7c6" class="">
+</p><p id="249e5d7f-bd86-804a-b9ef-ec74f81502f9" class="">Tensores podem ser usados em GPU.</p><p id="249e5d7f-bd86-80ac-a94b-c5ad9ea04dd2" class="">huh: porque?</p><p id="249e5d7f-bd86-806b-a2d3-d139ea27a156" class="">
+</p><p id="249e5d7f-bd86-8009-ad46-efc1a65c0c1c" class="">aha: gpu pode realizar várias tarefas simples ao mesmo tempo.</p><p id="24ce5d7f-bd86-806a-bfb3-c4ea57fae591" class="">
+</p><h3 id="24ce5d7f-bd86-80c7-9e6a-cda8d9469396" class="">Pytorch with Aladdin Persson</h3><p id="250e5d7f-bd86-80fb-8fc4-fe2a55d20ceb" class="">
+</p><ol type="1" id="250e5d7f-bd86-803a-8261-e575be98d1c4" class="numbered-list" start="1"><li>Tensor: como uma matriz, mas com superpoderes — pode ter 1, 2, 3 ou mais dimensões, guardar números e ser processada na CPU ou GPU. ✅</li></ol><ol type="1" id="250e5d7f-bd86-8056-8a14-db5a38bb6669" class="numbered-list" start="2"><li>Autograd: um contador automático de mudanças — segue cada operação e calcula derivadas sem você escrever fórmulas.</li></ol><ol type="1" id="250e5d7f-bd86-805f-ba24-ebe02587ad9a" class="numbered-list" start="3"><li>Computational Graph: um mapa das operações, que o autograd usa para saber como as mudanças se propagam.</li></ol><ol type="1" id="250e5d7f-bd86-80ce-b306-e8daa34d07f7" class="numbered-list" start="4"><li>GPU Acceleration (CUDA): como trocar uma bicicleta por um foguete — roda operações em placas gráficas para ser muito mais rápido.</li></ol><ol type="1" id="250e5d7f-bd86-804e-8acd-d3d816ef9b87" class="numbered-list" start="5"><li>Modules e nn.Module: blocos de montar redes neurais; cada peça sabe seus próprios pesos e como usá-los.</li></ol><ol type="1" id="250e5d7f-bd86-8067-8caf-d596153be7c8" class="numbered-list" start="6"><li>Layers: transformações prontas, como filtros e combinações de neurônios, para não reinventar a roda.</li></ol><ol type="1" id="250e5d7f-bd86-803f-9d0d-ff8e06e3312c" class="numbered-list" start="7"><li>Loss Functions: medidores de erro — dizem quão errado o modelo está, guiando ajustes.</li></ol><ol type="1" id="250e5d7f-bd86-80a7-b588-e8688e462859" class="numbered-list" start="8"><li>Optimizers: mecânicos automáticos — ajustam os pesos para reduzir o erro.</li></ol><ol type="1" id="250e5d7f-bd86-8081-a8ef-cdce1745b837" class="numbered-list" start="9"><li>Dataset e DataLoader: organizadores de dados — carregam, embaralham e entregam lotes para o treino.</li></ol><ol type="1" id="250e5d7f-bd86-80af-9594-f4b6cd643c16" class="numbered-list" start="10"><li>Training Loop: o ciclo de vida do aprendizado — pegar dados, prever, calcular erro, ajustar, repetir.</li></ol><ol type="1" id="250e5d7f-bd86-80b9-bf5f-e65f88ff6013" class="numbered-list" start="11"><li>Inference Mode: modo de usar o modelo sem gastar energia calculando gradientes.</li></ol><ol type="1" id="250e5d7f-bd86-80c7-9d41-fc9af18749fe" class="numbered-list" start="12"><li>Saving/Loading Models: congelar o estado da rede e trazer de volta depois, como salvar um jogo.</li></ol><p id="250e5d7f-bd86-8016-b8f0-fcb985c1d5d0" class="">aspectos do Pytorch que preciso aprender</p><p id="250e5d7f-bd86-8055-897a-e73ff0158585" class="">
+</p><p id="24ce5d7f-bd86-801d-96d2-ccb11b3bdedd" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24ce5d7f-bd86-8047-b459-dc685fddcecb" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tensor = torhc.tensor([[], []])</code></pre><p id="24ce5d7f-bd86-80ce-a7a1-e066ec844d06" class="">cada [] é uma linha, os elementos dentro, determinam a quantidade de colunas.</p><p id="24ce5d7f-bd86-80cd-bc67-e91e3ba7e55d" class="">
+</p><p id="24ce5d7f-bd86-80b0-afae-dbc87ffea17f" class="block-color-gray_background">quando tentei clonar o repo, learnAI tive erros. Não sei bem o motivo.</p><p id="24ce5d7f-bd86-802f-8a99-c40b74c8fe93" class="">
+</p><p id="24ce5d7f-bd86-8082-9e30-caf7dfe584a4" class="">CUDA é um protocolo que a GPU usa para trabalhar com vários dados (tensores) ao mesmo tempo.</p><p id="24ce5d7f-bd86-80e6-96c0-ee06de38ed58" class="">
+</p><p id="24ce5d7f-bd86-808b-b332-c5de31781a1a" class="">CUDA Diagram ⇒ <a href="https://www.youtube.com/watch?v=pPStdjuYzSI">https://www.youtube.com/watch?v=pPStdjuYzSI</a></p><p id="24ce5d7f-bd86-80fe-aebd-d626cbe3709a" class="">
+</p><p id="24ce5d7f-bd86-80f3-96c2-c8c04d67600d" class="">Essa linha* gerou erro, acho que seja porque eu não instalei cuda.</p><p id="24ce5d7f-bd86-80fb-a0f2-cfd0171086fd" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24ce5d7f-bd86-80d3-bbcd-d2880a455fea" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">device = &quot;cuda&quot; if not torch.cuda.is_available() else &quot;cpu&quot;</code></pre><p id="24ce5d7f-bd86-805a-bd30-e0f5277dc905" class="">
+</p><p id="24ce5d7f-bd86-8023-8ae4-e57dba2a723d" class="">eu estava tendo um erro para clonar repositório porque estava dando git init fora do repo clonado. achei a resposta aqui.</p><p id="24ce5d7f-bd86-8040-beb8-fbc44d6dda18" class="">
+</p><p id="24ce5d7f-bd86-802b-9799-c1fee500c0e3" class=""><a href="https://stackoverflow.com/questions/3212459/is-there-a-command-to-undo-git-init">https://stackoverflow.com/questions/3212459/is-there-a-command-to-undo-git-init</a></p><p id="24ce5d7f-bd86-8032-9669-d13fb226f199" class="">
+</p><p id="24ce5d7f-bd86-800f-92d0-c76adbb571b0" class="">Pytorch Sheet Cheat</p><p id="24ce5d7f-bd86-802a-bc36-f09abae7aa3a" class=""><a href="https://www.simonwenkel.com/publications/cheatsheets/pdf/cheatsheet_pytorch.pdf">https://www.simonwenkel.com/publications/cheatsheets/pdf/cheatsheet_pytorch.pdf</a></p><p id="24fe5d7f-bd86-80de-b8ff-f551c1087b59" class="">
+</p><h3 id="24fe5d7f-bd86-800c-8423-d51eae0edf9f" class="">Exercícios</h3><p id="24fe5d7f-bd86-80cb-a55f-efbccea98508" class="">
+</p><ol type="1" id="24fe5d7f-bd86-8043-8a2b-e334b7906670" class="numbered-list" start="1"><li>Create an tensor from the nested list [[5,3], [0,9]]</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24fe5d7f-bd86-804c-a79b-ee03a8dab94a" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+t = torch.tensor([[5, 3], [0, 9]])</code></pre><p id="24fe5d7f-bd86-80bb-9e6f-f180a66656c9" class="">
+</p><ol type="1" id="24fe5d7f-bd86-803c-a734-f2c6af16ce17" class="numbered-list" start="2"><li>Create a tensor ‘t’ of shape (5, 4) with random numbers from a uniform distribution on the interval [0, 1) </li></ol><p id="24fe5d7f-bd86-8082-a343-c2fe8278fee6" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24fe5d7f-bd86-800f-bc80-f1f8f1e13042" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+t = torch.rand((5, 4))</code></pre><p id="24fe5d7f-bd86-808c-b299-c50d2bd32c83" class="">
+</p><ol type="1" id="24fe5d7f-bd86-8071-ad92-cc57afebb0dc" class="numbered-list" start="3"><li>Find out which device the tensor ‘t’ is on and what its datatype is. </li></ol><p id="24fe5d7f-bd86-8012-8a6c-e7b6c5915a04" class=""><br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24fe5d7f-bd86-806f-b181-ec38c1bee0b7" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+print(t.dype, t.device)</code></pre><p id="24fe5d7f-bd86-8043-8813-ff63eb83d6fb" class="">
+</p><ol type="1" id="24fe5d7f-bd86-80b9-b26a-ceafe11e7a97" class="numbered-list" start="4"><li>Create two random tensors of shape (4,4) and (4,4) called ‘u’ and ‘v’ respectively. Join them to make a tensor of shape (8, 4).</li></ol><p id="24fe5d7f-bd86-80f7-bb0d-d5cde7c365d5" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24fe5d7f-bd86-80db-a828-fce0949b33ee" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import torch
+
+u = torhc.rand((4, 4))
+v = torhc.rand((4, 4))
+
+print(torch.concat((u,v), dim=0).shape) # torch.Size([8, 4])</code></pre><p id="24fe5d7f-bd86-806c-88ac-eb110afeb142" class="">
+</p><p id="24fe5d7f-bd86-80e3-927a-dc620c98cf7f" class="">Aha: Broadcasting é quando o Pytorch faz um tensor esticar para que ele possa interagir com outro tensor, de mais dimensões.</p><p id="24fe5d7f-bd86-80d2-a307-cbf34e625959" class="">
+</p><p id="24fe5d7f-bd86-809c-894c-ce0f6bad2f9c" class="">e.g (4, 3) e (3,). Ele estica o tensor mas não guarda na memória, os novos dados.</p><p id="250e5d7f-bd86-80f1-a36b-ea9d3cdb1e9f" class="">
+</p><ol type="1" id="250e5d7f-bd86-8061-8712-e2f87548807e" class="numbered-list" start="5"><li>Join u and v to create a tensor of shape (2, 4, 4).</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="250e5d7f-bd86-8076-97c9-c3306027cebc" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">w = torch.stack((u, v), dim=0)</code></pre><p id="250e5d7f-bd86-80d8-8019-c31944bf8651" class="">
+</p><ol type="1" id="250e5d7f-bd86-80c1-9bf0-dba8b336803d" class="numbered-list" start="6"><li>Join u and v to make a tensor, called w of shape (4, 4, 2).</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="250e5d7f-bd86-808a-91c2-cfc91201667b" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">w = torch.stack((u,v), dim=2)
+print(w.shape) # torch.Size([4, 4, 2])</code></pre><p id="25be5d7f-bd86-80a7-9a83-deb27abaae49" class="">
+</p><ol type="1" id="25be5d7f-bd86-8016-97ef-d41c615042e1" class="numbered-list" start="7"><li>Index w at 3, 3, 0. Call that element ‘e’.</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-808a-a692-c48a872b9241" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">e = w[3, 3, 0]</code></pre><p id="25be5d7f-bd86-80fb-90a5-cfcd65d7c7e2" class="">
+</p><ol type="1" id="250e5d7f-bd86-80e5-8be7-c2842087bfde" class="numbered-list" start="8"><li>Which of u or v would you find w in? Verify.</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-80f0-b587-c5c4fbe241b1" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"></code></pre><p id="25be5d7f-bd86-80f4-adda-deb2a9a4c3ee" class="">
+</p><ol type="1" id="25be5d7f-bd86-80d3-b3bd-f4700d3d3e4a" class="numbered-list" start="9"><li>Create a tensor ‘a’ of ones with shape (4, 3). Perform element wise multiplication of ‘a’ with itself.</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-808b-bc39-c8cf53ea7466" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">## meu
+a = torch.tensor.ones(4, 3)
+mul = a * a
+
+## correto
+a = torch.ones((4,3))
+a * a # tensor([[1., 1., 1.],[1., 1., 1.],[1., 1., 1.],[1., 1., 1.]])</code></pre><p id="25be5d7f-bd86-8097-97cc-c75f89cdb0c2" class="">
+</p><p id="25be5d7f-bd86-80bd-a817-f824d40c329f" class="">10. Add an extra dimension to ‘a’ (a new 0th dimension).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-8022-88a9-fcb272785bdb" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"></code></pre><p id="25be5d7f-bd86-80da-a432-ce11cf245268" class="">
+</p><ol type="1" id="25be5d7f-bd86-80d2-a2cf-cb0a949aa23c" class="numbered-list" start="11"><li> Perform a matrix multiplication of a with a transposed</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-800f-b408-c54210568845" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">## meu
+mul = tensor.mul(a, a.T)
+mul
+
+## certo
+a @ a.T # tensor([3., 3., 3., 3.],[3., 3., 3., 3.],[3., 3., 3., 3.],[3.,
+</code></pre><p id="25be5d7f-bd86-80a3-85b7-e44d888dc028" class="">
+</p><p id="25be5d7f-bd86-80fd-9eee-e222f22242ef" class="">12. What would a.mul(a) result in? (não entendi)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-8013-a0cf-f00c7f35e887" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">An elementwise multiplication, same as #9</code></pre><p id="25be5d7f-bd86-805b-8032-d27cae105853" class="">
+</p><ol type="1" id="25be5d7f-bd86-80f3-a56e-f82ffa9c65c3" class="numbered-list" start="13"><li>What would a.matmul(a.T) result in? (não entendi)</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-8085-bbf1-db1dfd52ae87" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">A matrix multiplication aka dot product, same as #11
+</code></pre><p id="25be5d7f-bd86-8053-bd95-dd6bd1f390c2" class="">
+</p><ol type="1" id="25be5d7f-bd86-809f-a51d-ffe352e870e7" class="numbered-list" start="14"><li> What would a.mul(a.T) result in?</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-8049-bf3d-e82a4f6fd21c" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"></code></pre><p id="25be5d7f-bd86-8073-84ad-db42e6cf6243" class="">
+</p><p id="25be5d7f-bd86-803a-9df2-c0fc5bbc0c59" class="">
+</p><ol type="1" id="25be5d7f-bd86-800a-aeac-e661fba719d3" class="numbered-list" start="15"><li>Guess what the following will print. Verify</li></ol><p id="25be5d7f-bd86-80a5-8840-fa4499ec2ed6" class="">t = torch.ones(5)</p><p id="25be5d7f-bd86-801a-bf83-c2fcbd277810" class="">n = t.numpy()</p><p id="25be5d7f-bd86-802f-af43-ea2e043b8869" class="">n[0] = 2</p><p id="25be5d7f-bd86-80a9-a152-cd83f953ea36" class="">print(t)</p><p id="25be5d7f-bd86-80a5-833c-fe374f8eaba6" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25be5d7f-bd86-80c1-96ee-c518b788c784" class="code code-wrap"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">[3. 2. 2. 2. 2.]. Changes in the Tensor array reflect in the NumPy array. Note that only add_ does the operation in place. </code></pre><p id="25be5d7f-bd86-808b-9505-d1ca7c2861a9" class="">
+</p><p id="25be5d7f-bd86-80b2-b73b-cdb170099824" class="">note: após o quizz via gemini, notei que estou com dificuldades com (view, dot product, squeeze, unsqueeze),</p><p id="25be5d7f-bd86-808c-88b6-fdc4809860d3" class="">
+</p><p id="264e5d7f-bd86-8025-a785-f71779701382" class=""><strong>AHA</strong></p><p id="28be5d7f-bd86-8026-88c7-deb5b4026e1d" class="">
+</p><p id="28be5d7f-bd86-8001-8ccf-d33cdaddc445" class="block-color-gray_background"><strong>Autograd and Neural Networks</strong></p><p id="28be5d7f-bd86-80c6-aa56-e336cb26247c" class="">há uma diferença entre gradiente e gradiente descent</p><p id="28be5d7f-bd86-80a2-b835-fc885f8340a8" class="">
+</p><p id="28be5d7f-bd86-80e5-beda-f747eeb0377e" class=""><strong>fowardpass </strong>⇒ rede neural tentar acertar os valores, da melhor forma possível</p><p id="28be5d7f-bd86-8073-a629-fdfdf34daa17" class="">
+</p><p id="28be5d7f-bd86-80d4-8354-f635425c6b28" class=""><strong>backward </strong>⇒ compara o chute com real e corrige.</p><figure id="28be5d7f-bd86-803e-9b56-c42334d7278c" class="image"><a href="image%202.png"><img style="width:548.3333740234375px" src="image%202.png"/></a></figure><p id="28be5d7f-bd86-8043-a195-cece8fe93c00" class="">
+</p><p id="28be5d7f-bd86-80e9-a42f-e2f67915724b" class="">de maneia geral, o processo para treinar uma nn é como se segue:</p><ul id="28be5d7f-bd86-8080-8db7-f4614d8204f6" class="bulleted-list"><li style="list-style-type:disc">interar sobre os dados</li></ul><ul id="28be5d7f-bd86-80ab-9d59-f904be0cf81e" class="bulleted-list"><li style="list-style-type:disc">chutar valores</li></ul><ul id="28be5d7f-bd86-8066-ad98-e1da1c72c25b" class="bulleted-list"><li style="list-style-type:disc">calcular erro</li></ul><ul id="28be5d7f-bd86-804f-9bd5-c132cc38a0ab" class="bulleted-list"><li style="list-style-type:disc">corrigir os erros (atualizando os pesos)</li></ul><p id="28be5d7f-bd86-80b0-880b-c61829b2e0c8" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
