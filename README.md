@@ -14,7 +14,7 @@ This course counts with 21 Lecture Notes
 | No | Lecture Name                                                   | Date Completed | Folder | Notes |
 |----|----------------------------------------------------------------|--------|----------------|-------|
 | 1  | [You Complete My Sandwiches / Exciting Advances with AI Language Models](https://docs.google.com/document/d/1FHnGGGhTTarovEAVzSfELlNvxhXFJV4DkpuGgMKaEGw/edit?tab=t.0#heading=h.cpm24dharnhg) | August 3th, 2025       |                |       |
-| 2  | The Zen of Python / Software Engineering Fundamentals           | August 4th, 2025       |                |       |
+| 2  | [The Zen of Python / Software Engineering Fundamentals](https://docs.google.com/document/d/1z5ELxpTw_U01jUB6-D6ILqHRPg6SSiLE7VFQryH3LPU/edit?tab=t.0)           | August 4th, 2025       |                |       |
 | 3  | Shoulders of Giants / Reading AI Research Papers               | August 5th, 2025       |                |       |
 | 4  | In-Tune with Jazz Hands / Fine-tuning a Language Model using Hugging Face |  August 6th, 2025      |                |       |
 | 5  | Lightning McTorch / Fine-tuning a Vision Transformer using Lightning | August 7th, 2025       |                |       |
