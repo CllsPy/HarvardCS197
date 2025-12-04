@@ -19,7 +19,7 @@ This course counts with 21 Lecture Notes
 | 4  | In-Tune with Jazz Hands / Fine-tuning a Language Model using Hugging Face |  August 6th, 2025      |                |       |
 | 5  | Lightning McTorch / Fine-tuning a Vision Transformer using Lightning | August 7th, 2025       |                |       |
 | 6  | Moonwalking with PyTorch / Solidifying PyTorch Fundamentals    | October 13th, 2025       | [Folder](https://github.com/CllsPy/HarvardCS197/tree/main/6%267)               |       |
-| 7  | Moonwalking with PyTorch (cont’d)                             |        |                | [Folder](https://github.com/CllsPy/HarvardCS197/tree/main/6%267)      |
+| 7  | Moonwalking with PyTorch (cont’d)                             |        |          [Folder](https://github.com/CllsPy/HarvardCS197/tree/main/6%267)       |      |
 | 8  | Experiment Organization Sparks Joy / Organizing Model Training with W&B and Hydra |        |                |       |
 | 9  | Experiment Organization Sparks Joy (cont’d)                   |        |                |       |
 | 10 | I Dreamed a Dream / A Framework for Generating Research Ideas   |        |                |       |
